@@ -1,5 +1,7 @@
 package carpeta;
 
+import carpeta.*;
+
 public class Combate {
     
     int rondas;
@@ -35,10 +37,10 @@ public class Combate {
         }
         this.rondas -= 1;
         if(Math.random() > 0.5){
-            insecto1.atack(insecto2);
+            insecto1.atacar(insecto2);
             return insecto2.getlife() > 0;
         }
-        insecto2.atack(insecto1);
+        insecto2.atacar(insecto1);
         return insecto1.getlife() > 0;
     }
 }

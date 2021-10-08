@@ -21,9 +21,9 @@ PSEUDOCODIGO: Es una forma de escribir los pasos que va a realizar un programa d
 
 ------Prueba------
 
-<img src="Captura.PNG" alt="Pseudocodigo">
+<img src="Captura.PNG" alt="ejercicio">
 
-<img src="ejerjava.PNG" alt="Pseudocodigo">
+<img src="ejerjava.PNG" alt="ejercicio">
 
-<img src="py.PNG" alt="Pseudocodigo">
+<img src="py.PNG" alt="ejercicio">
 

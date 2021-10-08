@@ -12,7 +12,7 @@ public class Abeja extends Insecto implements Volador {
         System.out.println("Estoy volando maik");
     }
 
-    public void atack(Insecto insecto){
+    public void atacar(Insecto insecto){
         System.out.println(Hormiga()+" Realiza un ataque mortal a "+this.life-80);
     }
 

@@ -1,3 +1,7 @@
+package carpeta;
+
+import carpeta.*;
+
 public class Hormiga extends Insecto {
     
     public Hormiga(){
@@ -8,9 +12,9 @@ public class Hormiga extends Insecto {
         super(name, 100, 30);
     }
 
-    public void atack(Insecto contrincante){
+    public void atacar(Insecto contrincante){
         System.out.println(this.name+" Realiza un ataque mortal a "+contrincante.getName());
-        contrincante.vida *= 0.2;
+        contrincante.life *= 0.2;
 
     }
 

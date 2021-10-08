@@ -1,3 +1,7 @@
+package carpeta;
+
+import carpeta.*;
+
 public class Mosca extends Insecto implements Volador {
 
 

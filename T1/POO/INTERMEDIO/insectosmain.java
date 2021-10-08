@@ -1,4 +1,6 @@
-import insectos.*;
+package carpeta;
+
+import carpeta.*;
 
 public class insectosmain {
     

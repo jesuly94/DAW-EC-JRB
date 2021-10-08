@@ -17,9 +17,14 @@ Polimorfismo : Es la capacidad que tienen los objetos de una clase en ofrecer re
 
 ------Prueba------
 
-<img src="Captura.PNG" alt="Pseudocodigo">
+<img src="encapsula.PNG" alt="Encapsulamiento">
 
-<img src="ejerjava.PNG" alt="Pseudocodigo">
+<img src="abstrac.PNG" alt="Abstracción">
 
-<img src="py.PNG" alt="Pseudocodigo">
+<img src="herencia1.PNG" alt="Herencia">
 
+<img src="herencia2.PNG" alt="Herencia">
+
+<img src="poli1.PNG" alt="Polimorfismo">
+
+<img src="poli2.PNG" alt="Polimorfismo">

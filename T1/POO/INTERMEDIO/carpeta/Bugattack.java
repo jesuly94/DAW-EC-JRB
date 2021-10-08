@@ -11,6 +11,6 @@ public class Bugattack {
         Insecto Abeja = new Abeja("Maya");
         Insecto Mosca = new Mosca("Pejiguera");
 
-        Hormiga.attack(Mosca);
+        Hormiga.atacar(Mosca);
     }
 }

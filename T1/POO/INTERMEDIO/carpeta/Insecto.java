@@ -1,4 +1,6 @@
-package insectos;
+package carpeta;
+
+import carpeta.*;
 
 abstract public class Insecto {
     
@@ -21,7 +23,7 @@ abstract public class Insecto {
     }
     public abstract void atacar(Insecto insecto);
 
-    public void saludar(){
+    public void greeting(){
         System.out.println("Aqui "+name+" ,"+" Listo para la batalla señor!");
     }
 

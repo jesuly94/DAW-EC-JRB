@@ -1,4 +1,6 @@
-package insectos;
+package carpeta;
+
+import carpeta.*;
 
 public interface Volador {
     
