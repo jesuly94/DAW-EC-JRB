@@ -1,163 +1,149 @@
-
-function capitales(capital){
-    
-    capital.innerHTML = `
-        <h2>Mi nombre es --> ${nombre}</h2>
-        <h3>y mido ${altura}</h3>
-    `;
-}
-
-function imprimir(){
-    var capital = document.getElementById("capital");
-    capitales(json);
-}
-
-imprimir();
-
-json.forEach((capital) => {
-    document.write(capital);
-});
-
-
-
-
 const json = {
-    "paises": [
+    paises: [
         {
-            "capital": "Burkina Faso",
-            "ciudad": "Ouagadougou"
+            nombre: "Tirana",
+            capital: "Tirana",
         },
         {
-            "capital": "Burundi",
-            "ciudad": "Bujumbura"
+            nombre: "Alemania",
+            capital: "Berlín",
         },
         {
-            "capital": "Cambodia",
-            "ciudad": "Phnom Penh"
+            nombre: "Andorra",
+            capital: "Andorra la Vella",
         },
         {
-            "capital": "Cameroon",
-            "ciudad": "Yaound"
+            nombre: "España",
+            capital: "Madrid",
         },
         {
-            "capital": "Canada",
-            "ciudad": "Ottawa"
+            nombre: "Francia",
+            capital: "París",
         },
         {
-            "capital": "Cape Verde",
-            "ciudad": "Praia"
+            nombre: "Inglaterra",
+            capital: "Londres",
         },
         {
-            "capital": "Cayman Islands",
-            "ciudad": "George Town"
+            nombre: "Bélgica",
+            capital: "Bruselas",
         },
         {
-            "capital": "Central African Republic",
-            "ciudad": "Bangui"
+            nombre: "Croacia",
+            capital: "Zagreb",
         },
         {
-            "capital": "Chad",
-            "ciudad": "N'Djam"
+            nombre: "Dinamarca",
+            capital: "Copenhage",
         },
         {
-            "capital": "Chile",
-            "ciudad": "Santiago de Chile"
+            nombre: "Estonia",
+            capital: "Tallín",
         },
         {
-            "capital": "China",
-            "ciudad": "Peking"
+            nombre: "Finlandia",
+            capital: "Helsinki",
         },
         {
-            "capital": "Christmas Island",
-            "ciudad": "Flying Fish Cove"
+            nombre: "Luxemburgo",
+            capital: "Luxemburgo",
         },
         {
-            "capital": "Cocos (Keeling) Islands",
-            "ciudad": "West Island"
+            nombre: "Mónaco",
+            capital: "Mónaco",
         },
         {
-            "capital": "Colombia",
-            "ciudad": "Santaf"
+            nombre: "Holanda",
+            capital: "Ámsterdam",
         },
         {
-            "capital": "Comoros",
-            "ciudad": "Moroni"
+            nombre: "Polonia",
+            capital: "Varsovia",
         },
         {
-            "capital": "Congo",
-            "ciudad": "Brazzaville"
+            nombre: "Portugal",
+            capital: "Lisboa",
         },
         {
-            "capital": "Cook Islands",
-            "ciudad": "Avarua"
+            nombre: "Rusia",
+            capital: "Moscú",
         },
         {
-            "capital": "Costa Rica",
-            "ciudad": "San Jos"
-        },
-        {
-            "capital": "Croatia",
-            "ciudad": "Zagreb"
-        },
-        {
-            "capital": "Cuba",
-            "ciudad": "La Habana"
-        },
-        {
-            "capital": "Cyprus",
-            "ciudad": "Nicosia"
-        },
-        {
-            "capital": "Czech Republic",
-            "ciudad": "Praha"
-        },
-        {
-            "capital": "Denmark",
-            "ciudad": "Copenhagen"
-        },
-        {
-            "capital": "Djibouti",
-            "ciudad": "Djibouti"
-        },
-        {
-            "capital": "Dominica",
-            "ciudad": "Roseau"
-        },
-        {
-            "capital": "Dominican Republic",
-            "ciudad": "Santo Domingo de Guzm"
-        },
-        {
-            "capital": "East Timor",
-            "ciudad": "Dili"
-        },
-        {
-            "capital": "Ecuador",
-            "ciudad": "Quito"
-        },
-        {
-            "capital": "Egypt",
-            "ciudad": "Cairo"
-        },
-        {
-            "capital": "El Salvador",
-            "ciudad": "San Salvador"
-        },
-        {
-            "capital": "England",
-            "ciudad": "London"
-        },
-        {
-            "capital": "Equatorial Guinea",
-            "ciudad": "Malabo"
-        },
-        {
-            "capital": "Eritrea",
-            "ciudad": "Asmara"
-        },
-        {
-            "capital": "Estonia",
-            "ciudad": "Tallinn"
+            nombre: "República Checa",
+            capital: "Praga",
         }
     ]
 };
+
+document.write("<form>Buscar por capitales:  <input id='search' type='text' onkeyup='buscar()' /></form>")
+document.write("<form>Buscar por país:  <input id='search2' type='text' onkeyup='buscarPais()' /></form>")
+document.write("<table id='paisycapital'>")
+document.write("<tr><th>Capital</th><th>País</th></tr>")
+for (i = 0; i < json.paises.length; i++) {
+    document.write("<tr>" + "<td>" + json.paises[i].capital + "</td>");
+    document.write("<th class='xd'>" + json.paises[i].nombre + "</th>" + "</tr>");
+    document.write("<tr class='noSearch hide'></tr>")
+}
+document.write("</table>");
+
+function buscar() {
+    const table = document.getElementById('paisycapital');
+    const buscarTexto = document.getElementById('search').value.toLowerCase();
+    let total = 0;
+
+    //AQUI PARA RECORRER FILAS
+    for (let i = 1; i < table.rows.length; i++) {
+        if (table.rows[i].classList.contains("noSearch")) {
+            continue;
+        }
+
+        let found = false;
+        const celdas = table.rows[i].getElementsByTagName('td');
+
+        //RECORREMOS CELDAS
+        for (let j = 0; j < celdas.length && !found; j++) {
+            const comparar = celdas[j].innerHTML.toLowerCase();
+            //PARA CONTENIDO
+            if (buscarTexto.length == 0 || comparar.indexOf(buscarTexto) > -1) {
+                found = true;
+                total++;
+            }
+        }
+        if (found) {
+            table.rows[i].style.display = '';
+        } else {
+            table.rows[i].style.display = 'none';
+        }
+    }
+}
+
+function buscarPais() {
+    const table = document.getElementById('paisycapital');
+    const buscarTexto = document.getElementById('search2').value.toLowerCase();
+    let total = 0;
+
+    //ESTO PARA RECORRER LAS FILAS
+    for (let i = 1; i < table.rows.length; i++) {
+        if (table.rows[i].classList.contains("noSearch")) {
+            continue;
+        }
+
+        let found = false;
+        const celdas = table.rows[i].getElementsByTagName('th');
+
+        //RECORRER LAS CELDAS
+        for (let j = 0; j < celdas.length && !found; j++) {
+            const comparar = celdas[j].innerHTML.toLowerCase();
+            //AQUI EL CONTENIDO PARA RECORRER
+            if (buscarTexto.length == 0 || comparar.indexOf(buscarTexto) > -1) {
+                found = true;
+                total++;
+            }
+        }
+        if (found) {
+            table.rows[i].style.display = '';
+        } else {
+            table.rows[i].style.display = 'none';
+        }
+    }
+}
