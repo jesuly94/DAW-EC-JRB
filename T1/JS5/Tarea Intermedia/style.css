@@ -1,0 +1,19 @@
+body{
+    display: block;
+    background-color: blue;
+    color: white;
+}
+
+form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    justify-content: center;
+    margin: 0 auto;
+}
