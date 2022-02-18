@@ -1,0 +1,17 @@
+<div class="m-5">
+    <h2>Mostrar segundo anime</h2>
+    {{animes[1].tittle}}
+
+    <h2>numero animes</h2>
+    {{animes.length}}
+
+    <hr>
+    <div *ngIf="animes.length <= 4">Hay pocos animes!! dame mas!</div>
+
+    <div *ngFor="let anime of animes">
+        <h2>{{anime.tittle}}</h2>
+        <div>
+            <img src="{{anime.image}}" alt="{{anime.tittle}}">
+        </div>
+    </div>
+</div>

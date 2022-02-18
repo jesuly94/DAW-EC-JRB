@@ -12,9 +12,12 @@ ANGULAR: Angular es un framework para aplicaciones web desarrollado en TypeScrip
 
 MODULOS: Son contenedores para las diferentes partes de una aplicación. Los módulos permiten a angular saber las importaciones y exportaciones necesarias para que cierto componente funcione.
 
+NGIF: es un condicionante que si se cumple se agregan a la pagina HTML.
+
+NGFOR: es una directiva que nos permite generar muchos elementos HTML repetirdos a partir del recorrido de un arreglo de datos.
 
 ------Prueba------
 He estado intentando que se visualice al poner ng serve pero no encuentro la solucion de porque no se ve.
-<img src="prueba1.PNG" alt="nocargaangular">
+<img src="captura.PNG" alt="prueba">
 
 
